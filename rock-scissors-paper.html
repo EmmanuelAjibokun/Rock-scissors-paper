@@ -7,11 +7,25 @@
   <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-<div id="buttons">
-  <button class="key" value="rock">Play Rock</button>
-  <button class="key" value="paper">Play Paper</button>
-  <button class="key" value="scissors">Play Scissors</button>
-</div>
+  <div id="buttons">
+    <button class="key" value="rock">Play Rock</button>
+    <button class="key" value="paper">Play Paper</button>
+    <button class="key" value="scissors">Play Scissors</button>
+  </div>
+
+  <div class="content__display">
+    <p class="player"></p>
+    <p class="computer"></p>
+    <div class="display"></div>
+  </div>
+
+  <div class="score">
+    <p> Score Board: </p>
+    <div class="board">
+      <P> Computer: <span class="computer__score"> 0 </span></P>
+      <p> Player: <span class="player__score"> 0 </span></p>
+    </div>
+  </div>
 
   <script src="./script.js"></script>
 </body>
