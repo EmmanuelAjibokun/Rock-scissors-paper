@@ -22,6 +22,7 @@ function displayLoseImage() {
     replay.classList.remove('replay');
     lose.classList.remove('lose');
 
+    document.querySelector('.content__display').style.display = "none";
     game
   });
 }
@@ -57,6 +58,7 @@ function game(e) {
   const display = document.querySelector('.display');
   const player = document.querySelector('.player');
   const computer = document.querySelector('.computer');
+  document.querySelector('.content__display').style.display = "block";
 
   function updateScoreboard(computerScore, playerScore) {
     document.querySelector('.computer__score').textContent = computerScore;
