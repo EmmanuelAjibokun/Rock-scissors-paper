@@ -5,71 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock-Paper-Scissors</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script>
-    const computerOptions = ['rock', 'paper', 'scissors'];
 
-    function playRound(playerSelection, computerSelection) {
+  <img src="images/shit.png" alt="Losing image" class="los">
 
-      if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return 'You lose! Paper beats Rock'
-      } else if (playerSelection == 'rock' && computerSelection == 'rock') {
-        return 'That was a tie! go again' 
-      } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        return 'You win! Rock beats Scissors'
-      } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-        return 'That was a tie! go again'
-      } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        return 'You win! Paper beats Rock'
-      } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        return 'You lose! Scissors beats Paper'
-      } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        return 'You win! Scissors beats Paper'
-      } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        return 'You lose! Rock beats Scissors'
-      } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-        return 'That was a tie! go again'
-      } else {
-        return 'Invalid'
-      }
-    }
+  <div class="content">
+    <h1>
+      Take a pick!
+    </h1>
 
-    function game() {
-      const playerChoice = prompt('Rock, Paper or Scissors: ', '');
-      const playerSelection = playerChoice.toLowerCase();
-      const computerSelection = computerPlay();
+    <div id="buttons">
+      <button class="key" value="rock">Play Rock</button>
+      <button class="key" value="paper">Play Paper</button>
+      <button class="key" value="scissors">Play Scissors</button>
+    </div>
 
-      function computerPlay() {
-        const random = Math.floor(Math.random() * computerOptions.length);
-        return computerOptions[random];
-      }
+    <div class="content__display">
+      <p class="player"></p>
+      <p class="computer"></p>
+      <div class="display"></div>
+    </div>
 
-      function play() {
-        if (playRound(playerSelection, computerSelection) === 'Invalid') {
-          return 'Invalid choice'
-        }
+    <div class="score">
+      <p> Score Board: </p>
+      <div class="board">
+        <P> Computer: <span class="computer__score"> 0 </span></P>
+        <p> Player: <span class="player__score"> 0 </span></p>
+      </div>
+    </div>
+  </div>
 
-        console.log('Player\'s Selection: ', playerSelection);
-        console.log('Computer\'s Selection: ', computerSelection);
-        return playRound(playerSelection, computerSelection);
-      }
-
-/*      function countScore() {
-        if (playRound(playerSelection, computerSelection) === 'You lose! Paper beats Rock') {
-          return 'user score: 0\n computer score: 1';
-        } return'user score: 0\ncomputer score: 0'
-      }*/
-      
-      console.log(play())
-
-    }
-
-    for (i = 0; i < 5; i++) {
-      game()
-    }
-
-
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
