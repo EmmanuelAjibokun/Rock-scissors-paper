@@ -5,7 +5,26 @@ const computerOptions = ['rock', 'paper', 'scissors'];
 const playerChoice = document.querySelector('#buttons');
 playerChoice.addEventListener('click', game);
 
+function displayLoseImage() {
+  const imgContainer = document.querySelector('#imgContainer');
+  const message = document.querySelector('#message');
+  const replay = document.querySelector('#replay');
+  const lose = document.querySelector('#lose');
 
+  imgContainer.classList.add('imgContainer');
+  message.classList.add('message');
+  replay.classList.add('replay');
+  lose.classList.add('lose');
+
+  replay.addEventListener('click', () => {
+    imgContainer.classList.remove('imgContainer');
+    message.classList.remove('message');
+    replay.classList.remove('replay');
+    lose.classList.remove('lose');
+
+    game
+  });
+}
 
 function playRound(playerSelection, computerSelection) {
 
@@ -62,10 +81,10 @@ function game(e) {
     }
 
     if(playerScore == 5) {
-      alert('Congratulations!');
+      displayLoseImage();
     } 
     if(computerScore == 5) {
-      alert('You lose!');
+      displayLoseImage();
     }
   }
 
