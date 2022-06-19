@@ -23,6 +23,8 @@ function displayLoseImage() {
     lose.classList.remove('lose');
 
     document.querySelector('.content__display').style.display = "none";
+    document.querySelector('.computer__score').textContent = 0;
+    document.querySelector('.player__score').textContent = 0;
     game
   });
 }
