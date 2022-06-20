@@ -29,6 +29,30 @@ function displayLoseImage() {
   });
 }
 
+function displayWinImage() {
+  const imgContainer = document.querySelector('#winImgContainer');
+  const message = document.querySelector('#win-message');
+  const replay = document.querySelector('#win-replay');
+  const win = document.querySelector('#win');
+
+  imgContainer.classList.add('imgContainer');
+  message.classList.add('message');
+  replay.classList.add('replay');
+  win.classList.add('win');
+
+  replay.addEventListener('click', () => {
+    imgContainer.classList.remove('imgContainer');
+    message.classList.remove('message');
+    replay.classList.remove('replay');
+    win.classList.remove('win');
+
+    document.querySelector('.content__display').style.display = "none";
+    document.querySelector('.computer__score').textContent = 0;
+    document.querySelector('.player__score').textContent = 0;
+    game
+  });
+}
+
 function playRound(playerSelection, computerSelection) {
 
   if (playerSelection == 'rock' && computerSelection == 'paper') {
@@ -85,7 +109,7 @@ function game(e) {
     }
 
     if(playerScore == 5) {
-      displayLoseImage();
+      displayWinImage();
     } 
     if(computerScore == 5) {
       displayLoseImage();

@@ -73,11 +73,11 @@ button:active {
   align-items: center;
 }
 
-#message {
+#message, #win-message {
   display: none;
 }
 
-#imgContainer .message {
+#imgContainer .message, #winImgContainer .message {
   display: block;
   position: absolute;
   left: 100px;
@@ -90,11 +90,11 @@ button:active {
   text-shadow: rgba(255, 254, 209, 0.7) 0px 0px 8px;
 }
 
-#replay {
+#replay, #win-replay {
   display: none;
 }
 
-#imgContainer .replay {
+#imgContainer .replay, #winImgContainer .replay {
   display: block;
   position: absolute;
   left: auto;
@@ -109,7 +109,7 @@ img {
   display: none;
 }
 
-.lose {
+.lose, .win {
   display: block;
   z-index: 2;
 }
