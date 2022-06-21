@@ -1,2 +1,2 @@
 # Rock-scissors-paper
-Project in progress
+Fully responsive web game
